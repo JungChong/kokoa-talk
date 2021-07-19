@@ -1,1 +1,9 @@
-selector
+box
+    div
+        block
+            대부분의 box들은 block
+            그 옆에 아무것도 올 수 없어
+
+    span, a, image
+        inline (in the same line)
+            옆에 다른 요소가 올 수 있어
