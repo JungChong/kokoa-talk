@@ -1,9 +1,60 @@
-box
-    div
-        block
-            대부분의 box들은 block
-            그 옆에 아무것도 올 수 없어
+[box]
+    block
+        대부분의 box들은 block
+        그 옆에 아무것도 올 수 없어
+        높이와 너비가 있어
 
-    span, a, image
-        inline (in the same line)
-            옆에 다른 요소가 올 수 있어
+    margin
+        box의 border(경계)의 바깥에 있는 공간
+        margin: 20px 0px;(상하20px, 좌우0px)
+        margin: 20px 5px 12px 9px;(상 우 하 좌)
+            padding에서도 같음
+    #Collapsing margins
+        내용물의 border와 box의 경계가 같을 때 두 box의 margin을 하나로 봄
+        상하에서만 발생
+    padding
+        경계로부터 안쪽 공간
+    border
+        border: 2px solid black;(line-width line-style color)
+            dashed, solid
+        border-style
+        border-radius(반지름,반경)
+
+    layer
+
+span, a, image
+    inline (in the same line)
+        옆에 다른 요소가 올 수 있어
+        높이와 너비가 없어(inline-block예외-반응형 디자인을 제공하지않아서 쓰레기야)
+            위, 아래에 margin을 가질 수 없어
+            padding은 어디든 가질 수 있어
+        height랑 weigh는 적용되지 않아
+            height: 100vh에서 vh는 viewpert(screen) height
+
+display속성으로 block,inline을 바꿀 수 있어
+
+[class]
+    하나의 element가에 여러개의 클래스를 가질 수 있어
+        Like this
+            <span class="btn tomato">hello</span>
+
+[flexbox]
+    박스들을 어떤 곳이들 둘 수 있어서 좋아
+    자식 엘리먼트에 말하지 않고 부모 엘리먼트에만 말한다
+    부모 엘리먼트를 flex container로 만들어야해
+        display:flex
+    flex container는 두개의 축을 가지고있는데 main axis(디폴트값=horizontal)와 cross axis(디폴트값=vertical)이다
+        justify-content는 main axis
+        align-items는 cross axis
+    부모에게 height가 없다면
+        align-items를 설정하더라도 바뀌지 않는다
+        부모에게 height를 준땐 vh로 주는 경우가 많다(화면의 몇%?의 이미)
+    부모가 자식을 컨트롤 할 수 있다
+    룰 1. 자식에게 명시하지 않고 부모에게 명시한다. 부모를 display:flex로 만든다
+    룰 2. 주축(main axis), 교차축(cross axis)
+        main axis
+            horizontal
+                해당 속성들 ex) justify-content
+        cross axis
+            vertical
+                해당 속성들 ex) align-items
