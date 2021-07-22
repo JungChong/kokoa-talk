@@ -1,17 +1,63 @@
-#Transition 어떤 상태에서 다른 상태로의 "변화"를 애니메이션으로 만드는 방법
-    transition이라는 속성은 state가 없는 요소에 붙어야함!!!
-    transition이 되려면 반드시 변화가 있어야 해(state에 따라 바뀌는 property를 갖고 있으면 사용)
+# transition [https://matthewlein.com/tools/ceaser]
+    -어떤 상태에서 다른 상태로의 "변화"를 애니메이션으로 만드는 방법
+    -transition이라는 속성은 state가 없는 요소에 붙어야함!!!
+    -transition이 되려면 반드시 변화가 있어야 해(state에 따라 바뀌는 property를 갖고 있으면 사용)
         transition: background-color 5s ease-in-out, color 5s ease-in-out; 
             --> 혹 배경색과 색이 변한다면 5초동안 변화하게 하는것
         transition: all 5s ease-in-out;
-
-    ease-out등 브라우저에게 변화하는 방법을 알려줌 https://matthewlein.com/tools/ceaser 에서 확인가능
+    ease-out등은 브라우저에게 변화하는 방법을 알려줌
     직접 커스텀한 후cubic-bezier를 가져올수도 있음
 
-#Transform (transform mdn)
-    transformation은 box element를 변형시키지 않는다 (다른 box element, 즉, 옆에 sibling들에게 영향을 끼치지 않는다.)
+# transform (transform mdn)
+    -transformation은 box element를 변형시키지 않는다 (다른 box element, 즉, 옆에 sibling들에게 영향을 끼치지 않는다.)
         margin, padding이 적용되지 않음. 일종의 3D transformation이기 때문
         다른 요소의 box를 변형시키지 않고 원하는 요소를 이동시키기 위해서 사용
         transition 과 transformation 을 합친다면 아름다운 애니매이션을 만들 수 있다
-    대표적인 것들
+    -대표적인 것들
         rotate(deg), scale(), translate(px), skew(deg), matdix()등등
+
+# animation [https://animista.net/]
+    -애니메이션 만들기
+        @keyframes 애니메이션name {
+            from{
+            }
+            to {
+            }
+        }
+    -사용하기
+        img {
+        animation : 애니메이션name 재생시간 옵션;
+        }
+        무한으로 반복되게 하려면 뒤에 infinite
+    - from to 말고, 0% 25% 50% 75% 100% 같이 여러 단계로 나뉘어 애니매이션을 만들 수 있다
+    - 다른 property들도 애니매이션으로 만들 수 있다. 
+        꼭 transform만 써야하는 건 아니지만, transform을 쓰는걸 권한다. 
+        일부 property는 애니매이션이 잘 안되기 때문이다.
+
+# Media Queries [https://developer.mozilla.org/ko/docs/Web/CSS/Media_Queries/Using_media_queries]
+    -오직 CSS만을 이용해서 스크린의 사이즈를 알 수 있는 방법, and로 연결됨. 마치 if문 같음
+    @media screen and (조건) and (조건){
+        실행문;
+    }
+    -대표적인 조건
+        min-width, max-width, orientation: portrait(세로모드), landscape(가로모드)
+        min-device-width, max-device-width(오직 핸드폰에만 적용 됨)
+    @media print{
+        프린트 할때 조건
+    }
+Media Queries 주요기능
+- min-device-width
+- max-device-width
+- orientation: landscape (가로모드)
+- orientation: portrait (세로모드)
+- aspect-ration - 레티나디스플레이 감지가능
+- display-mode
+- inverted-colors
+- lightlevel
+- prefers-contrast
+- resolution
+- monochrome
+
+Media type
+- @media screen{}
+- @media print{}
