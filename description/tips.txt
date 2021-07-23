@@ -1,0 +1,22 @@
+스크립트는 항상 마지막(body태그를 닫기 직전)에 있어야해
+
+css hack(justify-content대신사용가능)
+- 레시피 같이 어디든 쓸 수 있다. 이상하지만 작동한다.
+- 1 상위 박스 : justify-content: center; -중앙으로 몰림
+- 2 내부 박스 범위 : width: 33%; -왼쪽으로 몰려서 범위 벌어짐, 왼쪽 위치할 박스는 왼쪽에 붙어서 정렬됨
+- 3 중앙에 위치할 박스 : display: flex; justify-content: center; -중앙에 위치할 박스만 중앙에 위치함
+- 4 오른쪽에 정렬할 박스 : *display*: flex; *justify-content*: flex-end; *align-items*: center; -오른쪽에 붙어서 정렬됨
+
+<i class="fas fa-bolt fa-lg"></i>
+아이콘 크기조정 fa-lg fa-2x
+
+:not()
+    뭔가가 적용되는 걸 원하지 않을 때
+    ex)
+    #login-form input:not([type="submit"]) {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+        transition: border-color 0.3s ease-in-out;
+    }
+
+cursor: pointer;
+    마우스 올렸을 때 커서모양
