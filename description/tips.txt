@@ -60,3 +60,4 @@ position : fixed
 }
 
 라인 높이조정 line-height
+대문자로 만들기 text-transform: uppercase;
