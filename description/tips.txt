@@ -53,3 +53,8 @@ position : fixed
 
 - icon은 text다. font라고 생각하면 된다.
 - ">"은 chevron으로 검색하면 된다.
+
+-아이콘 크기는 font-size로도 조정가능
+.find-icons__icon i {
+  font-size: 35px;
+}

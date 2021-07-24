@@ -1,0 +1,13 @@
+.dot {
+  display: flex;
+  border-radius: 50%;
+  background-color: tomato;
+  width: 6px;
+  height: 6px;
+  position: absolute;
+}
+
+.dot-find {
+  left: 73px;
+  bottom: 20px;
+}
