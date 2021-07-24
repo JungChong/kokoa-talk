@@ -58,3 +58,5 @@ position : fixed
 .find-icons__icon i {
   font-size: 35px;
 }
+
+라인 높이조정 line-height
